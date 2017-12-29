@@ -30,14 +30,15 @@ header {
     color: #fff;
 }
 
-#dashes {
+.dashes {
     list-style-type: none;
     display: inline;
     margin-left: 20px;
     color: white;
 }
 
-#lives {
+#lives,
+#hintPrompt {
     font-size: 25px;
     font-family: fantasy;
     margin-left: 50px;
