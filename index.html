@@ -1,0 +1,66 @@
+<html>
+
+<head>
+    <title>
+        Hangman Game
+    </title>
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <script>
+        var alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h',
+            'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's',
+            't', 'u', 'v', 'w', 'x', 'y', 'z'
+        ];
+
+        var buttons = function() {
+            myButtons = document.getElementById('buttons');
+            letters = document.createElement('ul');
+
+            for (var i = 0; i < alphabet.length; i++) {
+                letters.id = 'alphabet';
+                list = document.createElement('li');
+                list.id = 'letter';
+                list.innerHTML = alphabet[i];
+                check();
+                myButtons.appendChild(letters);
+                letters.appendChild(list);
+            }
+        }
+    </script>
+</head>
+
+<body background="assets/images/bm.jpg">
+    <header>
+        <h1>Hangman Game</h1>
+    </header>
+    <br>
+    <div class="main">
+        <h2>Press any key to get started!!</h2>
+        <br>
+        <h2>Use the alphabet below to guess the word:</h2>
+
+    </div>
+
+    <div class="wrapper">
+
+        <div id="buttons">
+        </div>
+
+        <h2>Guess the state name:</h2>
+
+        <div id="hold">
+        </div>
+
+        <h2>Number of lives:</h2>
+        <p id="lives"></p>
+
+        <p id="output">
+        </p>
+    </div>
+    <div class="button">
+        <button id="hint">Hint</button>
+        <button id="reset">Play again</button>
+    </div>
+</body>
+<script type="text/javascript" src="assets/javascript/game.js"></script>
+
+</html>

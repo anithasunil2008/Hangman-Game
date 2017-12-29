@@ -1,0 +1,80 @@
+h1 {
+    text-align: center;
+    font-size: 40px;
+    font-family: fantasy;
+    color: black;
+}
+
+header {
+    border: hidden;
+    background-color: purple;
+}
+
+.main,
+.wrapper {
+    margin-left: 20px;
+    color: yellow;
+    font-family: fantasy;
+}
+
+.letter {
+    font-size: 20px;
+    margin-left: 10px;
+    width: 30px;
+    cursor: pointer;
+}
+
+.letter:hover {
+    background: #c1d72e;
+    border: solid 1px #fff;
+    color: #fff;
+}
+
+#dashes {
+    list-style-type: none;
+    display: inline;
+    margin-left: 20px;
+    color: white;
+}
+
+#lives {
+    font-size: 25px;
+    font-family: fantasy;
+    margin-left: 50px;
+    color: white;
+}
+
+#buttons {
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+#hold {
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+.button {
+    text-align: center;
+}
+
+#hint,
+#reset {
+    padding: 10px;
+    width: 100px;
+    background: #c1d72e;
+    border: solid 1px #fff;
+    color: black;
+    font-size: 15px;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+#hint:hover,
+#reset:hover {
+    background: white;
+}
+
+#hint {
+    margin-right: 20px;
+}
