@@ -4,7 +4,11 @@ alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h',
 ];
 
 words = ["maine", "florida", "texas", "california", "arizona", "NewYork"];
-var computerChoice = words[Math.floor(Math.random() * words.length)];
+hints = ["Is known for its rocky coastline", "Disney land", "A river that forms its border with Mexico",
+    "Hollywood entertainment industry", "is best known for the Grand Canyon", "Statue of liberty"
+];
+var index = Math.floor(Math.random() * words.length);
+var computerChoice = words[index];
 var guesses = [];
 var counter = 0;
 var lives = 5;
@@ -26,7 +30,6 @@ function buttons() {
     });
 
     myButtons.appendChild(letters);
-
 }
 
 
@@ -59,21 +62,15 @@ chances.innerHTML = lives;
 
 //Hints
 hint.onclick = function() {
-
-    hints = ["Is known for its rocky coastline", "Disney land", "A river that forms its border with Mexico",
-        "Hollywood entertainment industry", "is best known for the Grand Canyon", "Statue of liberty"
-    ];
-
-    if (computerChoice === "maine") {
-        prompt
-    }
+    console.log(hints[index]);
+    document.getElementById('hintPrompt').innerHTML = hints[index];
 
 }
 
 //Play Again button
 var playAgain = document.getElementById('reset');
 playAgain.onclick = function() {
-    play();
+    window.location.reload(true);
 }
 
 window.onload = play();
