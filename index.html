@@ -12,38 +12,33 @@
         <h1>Hangman Game</h1>
     </header>
     <br>
-    <div class="main">
-        <h2>Press any key to get started!!</h2>
-        <br>
-        <h2>Use the alphabet below to guess the word:</h2>
-
-    </div>
-
     <div class="wrapper">
 
+        <p>Use the alphabet below to guess the word: </p>
+    </div>
+    <div class="wrapper">
         <div id="buttons">
         </div>
-
-        <h2>Guess the state name:</h2>
-
+        <p id="catagoryName"></p>
+        <p>Guess the state Name:</p>
         <div id="hold">
         </div>
+        <p>Your Guessed letters:</p>
+        <p id="guessesLetter"></p>
+        <p>Your lives:</p>
+        <p id="mylives"></p>
+        <p>Clue:</p>
+        <p id="clue"></p>
+        <div class="container">
+            <button id="hint">Hint</button>
+            <button id="reset">Play again</button>
+        </div>
 
-        <h2>Number of lives:</h2>
-        <p id="lives"></p>
-
-        <p id="output">
-        </p>
-
-        <h2>Hint:</h2>
-        <p id="hintPrompt"></p>
+        <iframe width="560" height="315" src="" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen id="stateSong"></iframe>
 
     </div>
-    <div class="button">
-        <button id="hint">Hint</button>
-        <button id="reset">Play again</button>
-    </div>
+    <script type="text/javascript" src="assets/javascript/game.js">
+    </script>
 </body>
-<script type="text/javascript" src="assets/javascript/game.js"></script>
 
 </html>
