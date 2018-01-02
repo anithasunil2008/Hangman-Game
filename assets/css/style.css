@@ -102,3 +102,10 @@ p {
 #maine {
     display: none;
 }
+
+#video {
+    display: inline;
+    position: relative;
+    left: 700px;
+    bottom: 600px;
+}

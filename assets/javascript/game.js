@@ -13,23 +13,23 @@ window.onload = function() {
 
     var flagSong = ["https://www.youtube.com/embed/xXknnb-d4WU",
         "https://www.youtube.com/embed/uweoegT29Cs",
-        "https://youtu.be/bA1ZIyeY91E",
-        "https://youtu.be/jft8cQPgmi0",
-        "https://youtu.be/l-Wg_lDs2OY",
-        "https://youtu.be/ptdQUJEEpyM"
+        "https://www.youtube.com/embed/bA1ZIyeY91E",
+        "https://www.youtube.com/embed/jft8cQPgmi0",
+        "https://www.youtube.com/embed/l-Wg_lDs2OY",
+        "https://www.youtube.com/embed/ptdQUJEEpyM"
     ];
 
     var showLives = document.getElementById("mylives");
-    var showCatagory = document.getElementById("scatagory");
+    //var showCatagory = document.getElementById("scatagory");
     var getHint = document.getElementById("hint");
     var showClue = document.getElementById("clue");
     var letterGuess;
     var getHint;
     var guess;
     var guesses = [];
-    var lives;
-    var counter;
-    var space;
+    var lives = 10;
+    var counter = 0;
+    var space = 0;
     var empty = [];
 
     var index = Math.floor(Math.random() * words.length);
@@ -61,26 +61,33 @@ window.onload = function() {
             guess = document.createElement('li');
             guess.setAttribute('class', 'guess');
             if (computerChoice[i] === "-") {
-                //  guess.innerHTML = "-";
+                guess.innerHTML = "-";
+                console.log(guess);
+                space = 1;
             } else {
                 guess.innerHTML = "_";
             }
             guesses.push(guess);
+
+
             wordHolder.appendChild(correct);
             correct.appendChild(guess);
         }
+
     }
 
     comments = function() {
         showLives.innerHTML = lives;
         if (lives < 1) {
             showLives.innerHTML = "Game Over";
-            document.getElementById('stateSong').src = flagSong[index];
+
         }
         for (var i = 0; i < guesses.length; i++) {
             if (counter + space === guesses.length) {
                 showLives.innerHTML = "You Win!";
+                document.getElementById('stateSong').src = flagSong[index];
             }
+
         }
     }
 
@@ -114,20 +121,21 @@ window.onload = function() {
 
     play = function() {
         buttons();
-        guesses = [];
-        lives = 10;
-        counter = 0;
         main();
         comments();
+
     }
 
+    //main function calling
     play();
 
+    //Clue button function
     hint.onclick = function() {
         console.log(hints[index]);
         document.getElementById('clue').innerHTML = hints[index];
     }
 
+    //Play again button funtion
     document.getElementById('reset').onclick = function() {
         window.location.reload(true);
     }
