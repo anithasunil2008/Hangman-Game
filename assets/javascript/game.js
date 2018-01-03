@@ -30,19 +30,21 @@ window.onload = function() {
     var counter = 0;
     var space = 0;
     var empty = [];
+    var list;
 
     var index = Math.floor(Math.random() * words.length);
     console.log(index);
     var computerChoice = words[index];
     console.log(computerChoice);
 
+    //adding alphabet to the buttons
     var buttons = function() {
         myButtons = document.getElementById('buttons');
         letters = document.createElement('ul');
 
         for (var i = 0; i < alphabet.length; i++) {
             letters.id = 'alphabet';
-            list = document.createElement('li');
+            list = document.createElement('button');
             list.className = 'letter';
             list.innerHTML = alphabet[i];
             check();
@@ -51,12 +53,13 @@ window.onload = function() {
         }
     }
 
+    //adding the user guessed letter to an empty array
     main = function() {
         wordHolder = document.getElementById('hold');
         correct = document.createElement('ul');
 
         for (var i = 0; i < computerChoice.length; i++) {
-            correct.setAttribute('id', 'my-word');
+
             guess = document.createElement('li');
             guess.setAttribute('class', 'guess');
             if (computerChoice[i] === "-") {
@@ -68,19 +71,17 @@ window.onload = function() {
             }
             guesses.push(guess);
 
-
             wordHolder.appendChild(correct);
             correct.appendChild(guess);
         }
 
     }
 
+    // function for GameOver and You Won!!
     comments = function() {
         showLives.innerHTML = lives;
         if (lives < 1) {
             showLives.innerHTML = "Game Over";
-            document.getElementsByClassName('letter').disable = true;
-
         }
         for (var i = 0; i < guesses.length; i++) {
             if (counter + space === guesses.length) {
@@ -91,6 +92,7 @@ window.onload = function() {
         }
     }
 
+    //Alphabets buttons onclick function
     check = function() {
         list.onclick = function() {
 
@@ -100,6 +102,8 @@ window.onload = function() {
             console.log(letterGuess);
             empty.push(letterGuess);
             guessedLetter.innerHTML = empty;
+            list.disabled = true;
+
 
             for (var i = 0; i < computerChoice.length; i++) {
                 if (computerChoice[i] === letterGuess) {
@@ -115,9 +119,11 @@ window.onload = function() {
             } else {
                 comments();
             }
+            this.disabled = true;
         }
     }
 
+    //Main function
     play = function() {
         buttons();
         main();
