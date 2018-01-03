@@ -102,8 +102,6 @@ window.onload = function() {
             console.log(letterGuess);
             empty.push(letterGuess);
             guessedLetter.innerHTML = empty;
-            list.disabled = true;
-
 
             for (var i = 0; i < computerChoice.length; i++) {
                 if (computerChoice[i] === letterGuess) {
