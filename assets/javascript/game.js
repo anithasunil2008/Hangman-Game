@@ -20,7 +20,6 @@ window.onload = function() {
     ];
 
     var showLives = document.getElementById("mylives");
-    //var showCatagory = document.getElementById("scatagory");
     var getHint = document.getElementById("hint");
     var showClue = document.getElementById("clue");
     var letterGuess;
@@ -44,7 +43,7 @@ window.onload = function() {
         for (var i = 0; i < alphabet.length; i++) {
             letters.id = 'alphabet';
             list = document.createElement('li');
-            list.id = 'letter';
+            list.className = 'letter';
             list.innerHTML = alphabet[i];
             check();
             myButtons.appendChild(letters);
@@ -80,6 +79,7 @@ window.onload = function() {
         showLives.innerHTML = lives;
         if (lives < 1) {
             showLives.innerHTML = "Game Over";
+            document.getElementsByClassName('letter').disable = true;
 
         }
         for (var i = 0; i < guesses.length; i++) {
@@ -94,13 +94,12 @@ window.onload = function() {
     check = function() {
         list.onclick = function() {
 
-            var g = document.getElementById("guessesLetter");
+            var guessedLetter = document.getElementById("guessesLetter");
 
             letterGuess = this.innerHTML;
             console.log(letterGuess);
             empty.push(letterGuess);
-            console.log(empty);
-            g.innerHTML = empty;
+            guessedLetter.innerHTML = empty;
 
             for (var i = 0; i < computerChoice.length; i++) {
                 if (computerChoice[i] === letterGuess) {
