@@ -40,7 +40,7 @@ p {
 }
 
 .letter:hover {
-    background: #c1d72e;
+    background: red;
     border: solid 1px #fff;
     color: #fff;
 }
@@ -77,7 +77,7 @@ p {
     text-align: center;
     padding: 10px;
     width: 100px;
-    background: #c1d72e;
+    background: gray;
     border: solid 1px #fff;
     color: black;
     font-size: 15px;
@@ -87,7 +87,7 @@ p {
 
 #hint:hover,
 #reset:hover {
-    background: white;
+    background: red;
 }
 
 #hint {
