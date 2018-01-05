@@ -2,12 +2,13 @@ h1 {
     text-align: center;
     font-size: 40px;
     font-family: fantasy;
-    color: black;
+    color: red;
+    padding-top: 20px;
 }
 
 header {
     border: hidden;
-    background-color: purple;
+    /* background-color: purple; */
     margin-bottom: 30px;
 }
 

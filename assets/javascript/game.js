@@ -70,7 +70,6 @@ window.onload = function() {
                 guess.innerHTML = "_";
             }
             guesses.push(guess);
-
             wordHolder.appendChild(correct);
             correct.appendChild(guess);
         }
@@ -82,11 +81,13 @@ window.onload = function() {
         showLives.innerHTML = lives;
         if (lives < 1) {
             showLives.innerHTML = "Game Over";
+
         }
         for (var i = 0; i < guesses.length; i++) {
             if (counter + space === guesses.length) {
                 showLives.innerHTML = "You Win!";
                 document.getElementById('stateSong').src = flagSong[index];
+
             }
 
         }
